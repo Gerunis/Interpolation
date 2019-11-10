@@ -9,6 +9,7 @@ namespace Interpolation
         static void Main(string[] args)
         {
             var t = new Dot[3] { new Dot(-1,2), new Dot(4, 1), new Dot(5, 3), };
+            //Console.WriteLine("X Y");
             //for (var i = 0; i < 3; i++)
             //{
             //    var line = Console.ReadLine();
@@ -49,7 +50,7 @@ namespace Interpolation
                 res[1] += k[i] * sum;
                 res[2] += k[i] * mul;
             }
-            Console.WriteLine("f(x)= {0:N4}*x^2{1}*x+{2:N4}", res[0], res[1], res[2]);
+            Console.WriteLine("f(x)= {0:0.0000;-0.0000} * x^2 {1:+ 0.0000;- 0.0000} * x {2:+ 0.0000;- 0.0000}", res[0], res[1], res[2]);
         }
 
         static public void CountNutonPolynomial(Dot[] dots)
@@ -63,7 +64,7 @@ namespace Interpolation
             res[0] = deltas[0] - deltas[1] * dots[0].X + deltas[2] * dots[0].X * dots[1].X;
             res[1] = deltas[1] - deltas[2] * (dots[0].X + dots[1].X);
             res[2] = deltas[2];
-            Console.WriteLine("f(x)= {0:N4}*x^2{1}*x+{2:N4}", res[2], res[1], res[0]);
+            Console.WriteLine("f(x)= {0:0.0000;-0.0000} * x^2 {1:+ 0.0000;- 0.0000} * x {2:+ 0.0000;- 0.0000}", res[2], res[1], res[0]);
         }
 
         static double Delta(Dot[] dots, int start, int end)
